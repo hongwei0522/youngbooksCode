@@ -8,22 +8,22 @@ export default {
   },
   head: {
     titleTemplate: '%s',
-    title: '風度影業 RISING FILMS',
+    title: '閱讀私角落　校園攝影展',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'og:title'  , property: 'og:title'  , content: '風度影業 RISING FILMS'},
+      { hid: 'og:title'  , property: 'og:title'  , content: '閱讀私角落　校園攝影展'},
       { hid: 'og:image' , property: 'og:image' , content: 'logo.png'},
       { hid: 'og:type' , property: 'og:type' , content: 'website'},
       // { hid: 'og:url' , property: 'og:url' , content: ''},
-      { hid: 'description', name: 'description', content: '凝聚資源挹注台灣影視人才，結合資源、創意、商業模式，開創台灣影視新局。' },
-      { hid: 'og:description' , property: 'og:description' , content: '凝聚資源挹注台灣影視人才，結合資源、創意、商業模式，開創台灣影視新局。'},
+      { hid: 'description', name: 'description', content: '有一個角落，可以自由呼吸 有一個角落，可以滋養閱讀。' },
+      { hid: 'og:description' , property: 'og:description' , content: '有一個角落，可以自由呼吸 有一個角落，可以滋養閱讀。'},
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/risingFilmCh/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/youngbook/favicon.ico' }
     ]
   },
 

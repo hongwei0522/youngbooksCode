@@ -1,0 +1,222 @@
+<template>
+  <div class="school">
+    <div class="school-outer">
+      <topBar/>
+
+      <div class="school-title">{{ this.title }}閱讀私角落 校園攝影展</div>
+
+      <div class="school-swiper-box">
+        <swiper class="swiper school-swiper" :options="swiperOption" ref="mySwiper">
+          <swiper-slide class="school-swiper-slide"
+            v-for="(frame, index) in frames"
+            :key="index"
+          >
+            <div class="school-swiper-bg">
+              <div class="school-swiper-box">
+                <div class="school-swiper-img"
+                  :style="[
+                    {'backgroundImage': 'url(' + frame.img + ')'}
+                  ]"
+                ></div>
+                <div class="school-swiper-title">{{ frame.title }}</div>
+                <div class="school-swiper-desc">{{ frame.desc }}</div>
+              </div>
+            </div>
+
+            <div class="school-swiper-social">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhongwei0522.github.io%2Fyoungbooks%2Fschoolpage&amp;src=sdkpreparse" target="_blank">
+                <img class="school-swiper-icon" src="@/assets/img/icon/fb-share.png" alt="share fb">
+              </a>
+              <img @click="copy()" class="school-swiper-icon" src="@/assets/img/icon/copy.png" alt="copy link">
+              <a :href="`https://social-plugins.line.me/lineit/share?url=${currentUrl}`" target="_blank">
+                <img class="school-swiper-icon" src="@/assets/img/icon/line-share.png" alt="share line">
+              </a>
+            </div>
+
+          </swiper-slide>
+        </swiper>
+      </div>
+
+      <div class="school-back">
+        <nuxt-link to="/">
+          <div class="school-back-btn">
+            <div>看其他學校</div>
+            <img class="school-back-icon" src="@/assets/img/icon/go-arrow.png" alt="arrow back">
+          </div>
+        </nuxt-link>
+      </div>
+
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  components: {
+    topBar: require('~/components/top-bar.vue').default,
+    selectSption: require('~/components/select-option.vue').default,
+  },
+  props: {
+    frames: {
+      type: Array
+    },
+    title: {
+      type: String
+    }
+  },
+  data () {
+    return {
+      swiperOption: {
+        scrollbar: true,
+        // mousewheel: true,
+        slidesPerView: "auto",
+        spaceBetween: 40,
+      },
+      currentUrl: '',
+      
+    }
+  },
+  mounted () {
+    this.currentUrl = window.location.href
+  },
+  computed: {
+
+  },
+  methods: {
+    copy(){
+      var domUrl = document.createElement("input");
+          domUrl.value = this.currentUrl;
+          domUrl.id = "creatDom";
+          document.body.appendChild(domUrl);
+          domUrl.select(); // 选择对象
+          document.execCommand("Copy"); // 执行浏览器复制命令
+          let creatDom = document.getElementById("creatDom");
+          creatDom.parentNode.removeChild(creatDom);
+          this.$message({
+              message: '複製成功',
+              type: 'success'
+          });
+    }
+  },
+  watch: {
+    
+  }
+}
+</script>
+
+<style lang="scss">
+
+.school {
+  background-image: url('../assets/img/school/bg-pc.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  &-outer {
+    max-width: 1400px;
+    width: calc(100% - 40px);
+    padding: 0px 20px;
+  }
+
+  &-title {
+    margin: 40px 0px 100px;
+    font-size: 48px;
+    text-align: center;
+  }
+
+  &-swiper-box {
+    
+  }
+
+  &-swiper {
+
+
+    &-slide {
+      width: 404px;
+    }
+
+    &-bg {
+      background-image: url('../assets/img/school/photo-bg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: center;
+      width: 404px;
+      height: 448px;
+    }
+
+    &-box {
+      padding: 44px 0px 0px 76px;
+      font-weight: 500;
+    }
+
+    &-img {
+      width: 283px;
+      height: 283px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: center;
+    }
+
+    &-title {
+      font-size: 24px;
+      margin-top: 6px;
+    }
+
+    &-desc {
+      font-size: 18px;
+      margin-top: 0px;
+    }
+
+    &-social {
+      display: flex;
+      justify-content: flex-end;
+      align-items: baseline;
+      margin-right: 18px;
+    }
+
+    &-icon {
+      width: 40px;
+      height: 100%;
+      margin-left: 7px;
+    }
+  }
+
+  &-back {
+    display: flex;
+    justify-content: flex-end;
+    margin: 86px 0px 50px 0px;
+
+    &-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 346px;
+      padding: 4px 0px;
+      text-align: center;
+      font-size: 36px;
+      color: black;
+      background: #D8D76F;
+      border-radius: 50px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &-icon {
+      width: 14px;
+      height: 100%;
+      margin: 4px 0px 0px 10px;
+    }
+  }
+
+}
+
+</style>

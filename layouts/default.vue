@@ -13,7 +13,6 @@
 
 export default {
   components: {
-    topBar: require('~/components/top-bar.vue').default,
     bottomBar: require('~/components/bottom-bar.vue').default
   },
   props: {
