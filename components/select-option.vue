@@ -21,10 +21,11 @@ export default {
   data () {
     return {
       select: {
-        current: '學校一',
+        current: '選擇校園',
         options: [
-          { name: '學校一' },
-          { name: '學校二' },
+          { name: '長樂國小', path: '/school' },
+          { name: '輔大聖心高中', path: '/school-n01' },
+          { name: '臺灣大學', path: '/school-n02' },
         ]
       }
     }
@@ -33,9 +34,18 @@ export default {
 
   },
   methods: {
+
   },
   watch: {
-    
+    'select.current': {
+      handler: function(data) {
+        for(let j = 0; j < this.select.options.length; j++) {
+          if(this.select.options[j].name == data) {
+            this.$router.push(this.select.options[j].path)
+          }
+        }
+      },
+    }
   }
 }
 </script>

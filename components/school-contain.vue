@@ -27,7 +27,7 @@
             </div>
 
             <div class="school-swiper-social">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhongwei0522.github.io%2Fyoungbooks%2Fschoolpage&amp;src=sdkpreparse" target="_blank">
+              <a :href="`https://www.facebook.com/sharer/sharer.php?u=${fbUrl}&amp;src=sdkpreparse`" target="_blank">
                 <img class="school-swiper-icon" src="@/assets/img/icon/fb-share.png" alt="share fb">
               </a>
               <img @click="copy()" class="school-swiper-icon" src="@/assets/img/icon/copy.png" alt="copy link">
@@ -38,8 +38,8 @@
 
           </swiper-slide>
         </swiper>
-          <img @click="prevSlide()" class="school-swiper-prev" src="@/assets/img/icon/left-arrow.png" alt="prev">
-          <img @click="nextSlide()" class="school-swiper-next" src="@/assets/img/icon/right-arrow.png" alt="next">
+          <img v-if="slide.isShowPrev" @click="prevSlide()" class="school-swiper-prev" src="@/assets/img/icon/left-arrow.png" alt="prev">
+          <img v-if="slide.isShowNext" @click="nextSlide()" class="school-swiper-next" src="@/assets/img/icon/right-arrow.png" alt="next">
       </div>
 
       <div class="school-back">
@@ -71,11 +71,26 @@ export default {
   },
   data () {
     return {
+      url: {
+        first: 'hongwei0522.github.io',
+        second: 'youngbooks',
+        third: 'schoolpage'
+      },
+      slide: {
+        total: 0,
+        current: 0,
+        isShowPrev: true,
+        isShowNext: true
+      },
       swiperOption: {
         scrollbar: true,
         // mousewheel: true,
         slidesPerView: "auto",
         spaceBetween: 75,
+        autoplay: {
+          disableOnInteraction: false,
+          delay: 4000
+        },
         breakpoints: {
           1023: {
             slidesPerView: "auto",
@@ -93,21 +108,53 @@ export default {
         }
       },
       currentUrl: '',
-      
+      fbUrl: ''
     }
   },
   mounted () {
+    this.slide.total = this.frames.length
+    if(this.frames.length == 1) {
+      this.slide.isShowPrev = false
+      this.slide.isShowNext = false
+    }
     this.currentUrl = window.location.href
+    this.fbUrl = window.location.href
+    this.fbUrl = this.fbUrl.replace('/', '%2F')
+    this.fbUrl = this.fbUrl.replace('/', '%2F')
+    this.fbUrl = this.fbUrl.replace('/', '%2F')
+    this.fbUrl = this.fbUrl.replace('/', '%2F')
+    this.fbUrl = this.fbUrl.replace(':', '%3A')
+
   },
   computed: {
-
+    mySwiper () { return this.$refs.mySwiper.$swiper }
   },
   methods: {
     prevSlide() {
-
+      this.slide.current = this.mySwiper.activeIndex
+      this.mySwiper.slideTo(this.slide.current - 1)
+      this.judgeShowArrow()
+      // if(this.slide.current == 0) {
+      //   this.slide.isShowPrev = false
+      // } else {
+      //   this.slide.isShowPrev = true
+      // }
+      // this.slide.isShowNext = true
     },
     nextSlide() {
-
+      this.slide.current = this.mySwiper.activeIndex
+      this.mySwiper.slideTo(this.slide.current + 1)
+      this.judgeShowArrow()
+      // if(this.slide.current == this.slide.total - 1) {
+      //   this.slide.isShowNext = false
+      // } else {
+      //   this.slide.isShowNext = true
+      // }
+      // this.slide.isShowPrev = true
+    },
+    judgeShowArrow() {
+      
+      
     },
     copy(){
       var domUrl = document.createElement("input");
@@ -125,7 +172,7 @@ export default {
     }
   },
   watch: {
-    
+
   }
 }
 </script>

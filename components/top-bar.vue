@@ -1,8 +1,9 @@
 <template>
   <div class="header">
-    <nuxt-link class="header-link" to="/">
+    
+    <a class="header-link" href="https://ireader.books.com.tw/" target="_blank">
       <img class="header-logo" src="@/assets/img/icon/logo.png" alt="logo">
-    </nuxt-link>
+    </a>
     <a class="header-link" href="https://www.facebook.com/books.youth" target="_blank">
       <img class="header-social" src="@/assets/img/icon/fb.png" alt="fb">
     </a>
