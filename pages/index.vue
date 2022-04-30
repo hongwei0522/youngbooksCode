@@ -81,14 +81,14 @@ export default {
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
-  width: calc(100% - 40px);
+  width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
 
   &-outer {
     max-width: 1400px;
-    width: 100%;
+    width: calc(100% - 40px);
     padding: 0px 20px;
   }
 

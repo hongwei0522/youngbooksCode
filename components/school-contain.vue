@@ -3,7 +3,10 @@
     <div class="school-outer">
       <topBar/>
 
-      <div class="school-title">{{ this.title }}閱讀私角落 校園攝影展</div>
+      <div class="school-title">
+        <div>{{ this.title }}閱讀私角落</div>
+        <div>校園攝影展</div>
+      </div>
 
       <div class="school-swiper-box">
         <swiper class="swiper school-swiper" :options="swiperOption" ref="mySwiper">
@@ -35,6 +38,8 @@
 
           </swiper-slide>
         </swiper>
+          <img @click="prevSlide()" class="school-swiper-prev" src="@/assets/img/icon/left-arrow.png" alt="prev">
+          <img @click="nextSlide()" class="school-swiper-next" src="@/assets/img/icon/right-arrow.png" alt="next">
       </div>
 
       <div class="school-back">
@@ -70,7 +75,22 @@ export default {
         scrollbar: true,
         // mousewheel: true,
         slidesPerView: "auto",
-        spaceBetween: 40,
+        spaceBetween: 75,
+        breakpoints: {
+          1023: {
+            slidesPerView: "auto",
+            // centeredSlides: false,
+            spaceBetween: 75,
+          },
+          768: {
+            slidesPerView: "auto",
+            spaceBetween: 75,
+          },
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+        }
       },
       currentUrl: '',
       
@@ -83,6 +103,12 @@ export default {
 
   },
   methods: {
+    prevSlide() {
+
+    },
+    nextSlide() {
+
+    },
     copy(){
       var domUrl = document.createElement("input");
           domUrl.value = this.currentUrl;
@@ -118,22 +144,27 @@ export default {
 
   &-outer {
     max-width: 1400px;
-    width: calc(100% - 40px);
-    padding: 0px 20px;
+    width: calc(100% - 100px);
+    padding: 0px 50px;
   }
 
   &-title {
+    display: flex;
+    justify-content: center;
     margin: 40px 0px 100px;
     font-size: 48px;
-    text-align: center;
+
+    & div:first-child {
+      margin-right: 60px;
+    }
   }
 
   &-swiper-box {
-    
+    position: relative;
   }
 
   &-swiper {
-
+    width: 100%;
 
     &-slide {
       width: 404px;
@@ -150,7 +181,10 @@ export default {
     }
 
     &-box {
-      padding: 44px 0px 0px 76px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 44px 0px 0px 0px;
       font-weight: 500;
     }
 
@@ -177,13 +211,41 @@ export default {
       display: flex;
       justify-content: flex-end;
       align-items: baseline;
-      margin-right: 18px;
+      margin: 4px 32px 0px 0px;
     }
 
     &-icon {
       width: 40px;
       height: 100%;
       margin-left: 7px;
+    }
+
+    &-prev {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      z-index: 1;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &-next {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      z-index: 1;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 
@@ -216,6 +278,101 @@ export default {
       margin: 4px 0px 0px 10px;
     }
   }
+
+}
+
+@media( max-width: 768px ){
+
+  .school {
+  background-image: url('../assets/img/school/bg-m.jpg');
+  
+
+  &-outer {
+    width: calc(100% - 10px);
+    padding: 0px 5px;
+  }
+
+  &-title {
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0px 0px;
+    font-size: 30px;
+
+    & div:first-child {
+      margin-right: 0px;
+    }
+  }
+
+  &-swiper-box {
+
+  }
+
+  &-swiper {
+
+
+    &-slide {
+      
+    }
+
+    &-bg {
+      margin: auto;
+      width: 300px;
+      height: 320px;
+    }
+
+    &-box {
+      padding: 25px 0px 0px 0px;
+    }
+
+    &-img {
+      width: 210px;
+      height: 210px;
+    }
+
+    &-title {
+      font-size: 16px;
+    }
+
+    &-desc {
+      
+    }
+
+    &-social {
+      justify-content: center;
+      margin: 4px 0px 0px 140px;
+    }
+
+    &-icon {
+      width: 30px;
+    }
+
+    &-prev {
+      left: calc(50% - 162px);
+      width: 30px;
+      height: 30px;
+    }
+
+    &-next {
+      right: calc(50% - 160px);
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &-back {
+    justify-content: center;
+
+    &-btn {
+      width: 260px;
+      font-size: 24px;
+    }
+
+    &-icon {
+      width: 10px;
+    }
+  }
+
+}
 
 }
 
