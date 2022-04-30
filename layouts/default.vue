@@ -99,7 +99,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: 'NotoSansTC', 'Roboto', 'Noto Sans TC', 'Noto Sans SC' ,sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 300;
   // color: #FFFFFF;
   // background-color: #171719;
@@ -144,7 +144,7 @@ textarea {
 @media( max-width: 1023px ){
 
   body {
-    font-size: 14px;
+    font-size: 20px;
   }
 
 }
