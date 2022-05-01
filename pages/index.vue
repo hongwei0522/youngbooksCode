@@ -139,7 +139,12 @@
             </g>
           </svg>
 
-          <div v-if="popup.north" @mouseover="scaleHover('north')" class="index-map-popup index-map-popup-north">
+          <div
+            v-show="northHover"
+            @mouseover="scaleHover('north')"
+            @mouseleave="awayHover('north')"
+            class="index-map-popup index-map-popup-north"
+          >
             <nuxt-link v-for="(north, index) in school.north"
               :key="index"
               :to="north.path"
@@ -147,7 +152,12 @@
               <div class="index-map-popup-text">{{ north.name }}</div>
             </nuxt-link>
           </div>
-          <div v-if="popup.center" @mouseover="scaleHover('center')" class="index-map-popup index-map-popup-middle">
+          <div
+            v-show="centerHover"
+            @mouseover="scaleHover('center')"
+            @mouseleave="awayHover('center')"
+            class="index-map-popup index-map-popup-middle"
+          >
             <nuxt-link v-for="(middle, index) in school.middle"
               :key="index"
               :to="middle.path"
@@ -155,11 +165,12 @@
               <div class="index-map-popup-text">{{ middle.name }}</div>
             </nuxt-link>
           </div>
-          <div v-if="popup.south" @mouseover="scaleHover('south')" class="index-map-popup index-map-popup-south">
-            <!-- <el-button
-                size="large"
-                icon="el-icon-close"
-            ></el-button> -->
+          <div
+            v-show="southHover"
+            @mouseover="scaleHover('south')"
+            @mouseleave="awayHover('south')"
+            class="index-map-popup index-map-popup-south"
+          >
             <nuxt-link v-for="(south, index) in school.south"
               :key="index"
               :to="south.path"
@@ -167,7 +178,12 @@
               <div class="index-map-popup-text">{{ south.name }}</div>
             </nuxt-link>
           </div>
-          <div v-if="popup.east" @mouseover="scaleHover('east')" class="index-map-popup index-map-popup-east">
+          <div
+            v-show="eastHover"
+            @mouseover="scaleHover('east')"
+            @mouseleave="awayHover('east')"
+            class="index-map-popup index-map-popup-east"
+          >
             <nuxt-link v-for="(east, index) in school.east"
               :key="index"
               :to="east.path"
@@ -175,7 +191,12 @@
               <div class="index-map-popup-text">{{ east.name }}</div>
             </nuxt-link>
           </div>
-          <div v-if="popup.island" @mouseover="scaleHover('island')" class="index-map-popup index-map-popup-island">
+          <div
+            v-show="islandHover"
+            @mouseover="scaleHover('island')"
+            @mouseleave="awayHover('island')"
+           class="index-map-popup index-map-popup-island"
+          >
             <nuxt-link v-for="(island, index) in school.island"
               :key="index"
               :to="island.path"
