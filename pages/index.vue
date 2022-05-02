@@ -773,9 +773,9 @@ export default {
 
   &-tag {
     position: absolute;
-    top: 200px;
-    width: 300px;
-    margin: 0px 0px 0px 20px;
+    top: 217px;
+    width: 120px;
+    margin: 0px 0px 0px 200px;
     text-align: right;
 
     &-box {
@@ -807,6 +807,14 @@ export default {
   border: 0px;
   font-size: 24px;
 }
+
+.el-select>.el-input {
+    width: 293px;
+  }
+
+  .el-input--suffix .el-input__inner {
+    width: 100%;
+  }
 
 @media( max-width: 1023px ){
 
