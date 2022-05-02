@@ -12,7 +12,7 @@ export default {
       meta: [
         { charset: 'utf-8' },
         { hid: 'og:title'  , property: 'og:title'  , content: '長樂國小' },
-        { hid: 'og:image' , property: 'og:image' , content: require('@/assets/img/article/n-01_s01_01.jpeg') },
+        { hid: 'og:image' , property: 'og:image' , content: require('@/assets/img/article/n-01_s01_02.jpg') },
         { hid: 'description', name: 'description', content: '基隆長樂國小' },
         { hid: 'og:description' , property: 'og:description' , content: '基隆長樂國小' },
       ],

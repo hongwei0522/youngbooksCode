@@ -12,7 +12,7 @@ export default {
       meta: [
         { charset: 'utf-8' },
         { hid: 'og:title'  , property: 'og:title'  , content: '臺灣大學' },
-        { hid: 'og:image' , property: 'og:image' , content: require('@/assets/img/article/n-01_s01_01.jpeg') },
+        { hid: 'og:image' , property: 'og:image' , content: require('@/assets/img/article/n-02_u01_01.jpg') },
         { hid: 'description', name: 'description', content: '國立臺灣大學' },
         { hid: 'og:description' , property: 'og:description' , content: '國立臺灣大學' },
       ],

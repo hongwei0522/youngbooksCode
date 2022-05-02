@@ -554,7 +554,7 @@ export default {
 
     &-icon-island {
       top: 330px;
-      right: 460px;
+      right: 477px;
     }
 
     &-popup-text {
@@ -763,7 +763,7 @@ export default {
 
     &-icon-island {
       top: 150px;
-      right: 240px;
+      right: 256px;
     }
 
     &-popup-text {
