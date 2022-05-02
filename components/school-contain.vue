@@ -105,6 +105,14 @@ export default {
             slidesPerView: 1,
             spaceBetween: 0,
           },
+        },
+        observer: true,
+        on: {
+          resize: () => {
+            setTimeout(()=> {
+              this.$router.push('/blank')
+            }, 500)
+          }
         }
       },
       currentUrl: '',
@@ -117,6 +125,12 @@ export default {
       this.slide.isShowPrev = false
       this.slide.isShowNext = false
     }
+
+    this.mySwiper.on('slideChange', () => {
+      
+    })
+
+
     this.currentUrl = window.location.href
     this.fbUrl = window.location.href
     this.fbUrl = this.fbUrl.replace('/', '%2F')
@@ -131,30 +145,10 @@ export default {
   },
   methods: {
     prevSlide() {
-      this.slide.current = this.mySwiper.activeIndex
       this.mySwiper.slideTo(this.slide.current - 1)
-      this.judgeShowArrow()
-      // if(this.slide.current == 0) {
-      //   this.slide.isShowPrev = false
-      // } else {
-      //   this.slide.isShowPrev = true
-      // }
-      // this.slide.isShowNext = true
     },
     nextSlide() {
-      this.slide.current = this.mySwiper.activeIndex
       this.mySwiper.slideTo(this.slide.current + 1)
-      this.judgeShowArrow()
-      // if(this.slide.current == this.slide.total - 1) {
-      //   this.slide.isShowNext = false
-      // } else {
-      //   this.slide.isShowNext = true
-      // }
-      // this.slide.isShowPrev = true
-    },
-    judgeShowArrow() {
-      
-      
     },
     copy(){
       var domUrl = document.createElement("input");
@@ -342,7 +336,7 @@ export default {
   &-title {
     flex-direction: column;
     align-items: center;
-    margin: 40px 0px 0px;
+    margin: 60px 0px 0px;
     font-size: 30px;
 
     & div:first-child {

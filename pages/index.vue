@@ -19,6 +19,9 @@
           <div class="index-intro-text">我最喜歡的校園空間、支持你的閱讀私角落</div>
         </div>
       </div>
+      <div class="index-rwd-select">
+        <selectSption class="index-rwd" />
+      </div>
 
       <div class="index-map-tag">
 
@@ -250,7 +253,7 @@
         </div>
 
         <div class="index-tag">
-          <selectSption />
+          <selectSption class="index-desktop" />
           <div class="index-tag-box">
             <nuxt-link class="index-tag-link" to="/school">
               <div class="index-tag-text">#長樂國小</div>
@@ -373,6 +376,14 @@ export default {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+
+  &-desktop {
+    display: block;
+  }
+
+  &-rwd {
+    display: none;
+  }
 
   &-outer {
     max-width: 1400px;
@@ -581,45 +592,72 @@ export default {
 @media( max-width: 1023px ){
 
 .index {
+  background-image: url('../assets/img/index/bg-m.jpg');
+
+  &-desktop {
+    display: none;
+  }
+
+  &-rwd {
+    display: block;
+  }
   
 
   &-outer {
-    
+    width: calc(100% - 10px);
+    padding: 0px 5px;
   }
 
   &-intro {
     
 
     &-title {
-      
+      margin: 20px 0px 20px;
+      font-size: 30px;
     }
 
     &-text {
-      
+      font-size: 18px;
+      text-align: center;
 
       &:nth-child(1) {
-        
+        flex-direction: column;
 
         & div:first-child {
-          
+          margin: 0px;
         }
       }
 
       &:nth-child(2) {
-        
+        flex-direction: column;
 
         & div:first-child {
-          
+          margin: 0px;
         }
       }
     }
   }
 
+  &-rwd-select {
+    margin-top: 20px;
+  }
+
   &-map-tag {
-    
+    position: relative;
+    flex-direction: column;
+    align-items: center;
   }
 
   &-map {
+    width: 320px;
+    height: 330px;
+    justify-content: center;
+    margin-top: 20px;
+
+    svg {
+      width: 280px;
+      height: 320px;
+    }
     
 
     path{
@@ -667,11 +705,12 @@ export default {
     }
 
     &-popup {
-      
+      padding: 10px;
     }
     
     &-icon {
-      
+      width: 30px;
+      height: 30px;
     }
 
     &-icon-hover {
@@ -683,51 +722,64 @@ export default {
     }
 
     &-icon-north {
-      
+      top: 32px;
+      right: 100px;
     }
 
     &-popup-middle {
-      
+      top: 80px;
+      right: 100px;
     }
 
     &-icon-middle {
-      
+      top: 80px;
+      right: 144px;
     }
 
     &-popup-south {
-      
+      top: 180px;
+      right: 150px;
     }
 
     &-icon-south {
-      
+      top: 200px;
+      right: 180px;
     }
 
     &-popup-east {
-      
+      top: 120px;
+      right: 80px;
     }
 
     &-icon-east {
-      
+      top: 130px;
+     right: 90px;
     }
 
     &-popup-island {
-      
+      top: 100px;
+      right: 200px;
     }
 
     &-icon-island {
-      
+      top: 150px;
+      right: 240px;
     }
 
     &-popup-text {
-      
+      font-size: 16px;
     }
   }
 
   &-tag {
-    
+    position: absolute;
+    top: 200px;
+    width: 300px;
+    margin: 0px 0px 0px 20px;
+    text-align: right;
 
     &-box {
-      
+      margin-top: 0px;
     }
 
     &-link {
@@ -735,7 +787,7 @@ export default {
     }
 
     &-text {
-      
+      font-size: 16px;
     }
   }
 
@@ -754,6 +806,18 @@ export default {
   padding: 0px;
   border: 0px;
   font-size: 24px;
+}
+
+@media( max-width: 1023px ){
+
+  .el-select>.el-input {
+    width: 90%;
+    margin: auto;
+  }
+
+  .el-input--suffix .el-input__inner {
+    width: 100%;
+  }
 }
 
 </style>

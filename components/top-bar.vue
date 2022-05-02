@@ -59,5 +59,27 @@ export default {
   }
 }
 
+@media( max-width: 1023px ){
+
+.header {
+  margin-top: 10px;
+
+  &-link {
+    
+  }
+
+  &-logo {
+    width: 200px;
+    margin-right: 6px;
+  }
+
+  &-social {
+    width: 26px;
+    margin: 0px 7px 6px 0px;
+  }
+}
+
+}
+
 
 </style>
