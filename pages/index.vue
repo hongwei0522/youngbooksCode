@@ -809,22 +809,22 @@ export default {
 }
 
 .el-select>.el-input {
-    width: 293px;
-  }
+  width: 293px;
+}
 
-  .el-input--suffix .el-input__inner {
-    width: 100%;
-  }
+.el-input--suffix .el-input__inner {
+  width: 100%;
+}
 
 @media( max-width: 1023px ){
 
   .el-select>.el-input {
-    width: 90%;
-    margin: auto;
+    width: 90% !important;
+    margin: auto !important;
   }
 
   .el-input--suffix .el-input__inner {
-    width: 100%;
+    width: 100% !important;
   }
 }
 

@@ -145,10 +145,12 @@ export default {
   },
   methods: {
     prevSlide() {
-      this.mySwiper.slideTo(this.slide.current - 1)
+      // this.mySwiper.slideTo(this.slide.current - 1)
+      this.mySwiper.slidePrev()
     },
     nextSlide() {
-      this.mySwiper.slideTo(this.slide.current + 1)
+      // this.mySwiper.slideTo(this.slide.current + 1)
+      this.mySwiper.slideNext()
     },
     copy(){
       var domUrl = document.createElement("input");
