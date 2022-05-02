@@ -139,6 +139,46 @@
             </g>
           </svg>
 
+          <img @mouseover="scaleHover('north')"
+            @mouseleave="awayHover('north')"
+            class="index-map-icon-north index-map-icon"
+            :class="[{'index-map-icon-hover': northHover}]"
+            src="@/assets/img/index/north-pin.png"
+            alt="pin"
+          >
+
+          <img @mouseover="scaleHover('center')"
+            @mouseleave="awayHover('center')"
+            class="index-map-icon-middle index-map-icon"
+            :class="[{'index-map-icon-hover': centerHover}]"
+            src="@/assets/img/index/middle-pin.png"
+            alt="pin"
+          >
+
+          <img @mouseover="scaleHover('south')"
+            @mouseleave="awayHover('south')"
+            class="index-map-icon-south index-map-icon"
+            :class="[{'index-map-icon-hover': southHover}]"
+            src="@/assets/img/index/south-pin.png"
+            alt="pin"
+          >
+
+          <img @mouseover="scaleHover('east')"
+            @mouseleave="awayHover('east')"
+            class="index-map-icon-east index-map-icon"
+            :class="[{'index-map-icon-hover': eastHover}]"
+            src="@/assets/img/index/east-pin.png"
+            alt="pin"
+          >
+
+          <img @mouseover="scaleHover('island')"
+            @mouseleave="awayHover('island')"
+            class="index-map-icon-island index-map-icon"
+            :class="[{'index-map-icon-hover': islandHover}]"
+            src="@/assets/img/index/islands-pin.png"
+            alt="pin"
+          >
+
           <div
             v-show="northHover"
             @mouseover="scaleHover('north')"
@@ -394,7 +434,9 @@ export default {
     }
 
     &-north-hover {
-      transform: scale(1.001);
+      transform: scale(1.1) translate(-50px,-10px);
+      transition-timing-function: ease-in-out;
+      transition-duration: 1s;
     }
 
     &-east{
@@ -402,7 +444,9 @@ export default {
     }
 
     &-east-hover {
-      transform: scale(1.001);
+      transform: scale(1.1) translate(-50px,-20px);
+      transition-timing-function: ease-in-out;
+      transition-duration: 1s;
     }
 
     &-center{
@@ -410,7 +454,9 @@ export default {
     }
 
     &-center-hover {
-      transform: scale(1.001);
+      transform: scale(1.1) translate(-45px,-15px);
+      transition-timing-function: ease-in-out;
+      transition-duration: 1s;
     }
 
     &-south{
@@ -418,7 +464,9 @@ export default {
     }
 
     &-south-hover {
-      transform: scale(1.001);
+      transform: scale(1.1) translate(-45px,-23px);
+      transition-timing-function: ease-in-out;
+      transition-duration: 1s;
     }
 
     &-island{
@@ -426,7 +474,9 @@ export default {
     }
 
     &-island-hover {
-      transform: scale(1.001);
+      transform: scale(1.1) translate(-37px,-20px);
+      transition-timing-function: ease-in-out;
+      transition-duration: 1s;
     }
 
     &-popup {
@@ -435,9 +485,25 @@ export default {
       background-color: white;
       border-radius: 30px;
     }
+    
+    &-icon {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      transition: all 1s;
+    }
+
+    &-icon-hover {
+      transform: scale(1.2);
+    }
 
     &-popup-north {
       top: 20px;
+    }
+
+    &-icon-north {
+      top: 60px;
+      right: 140px;
     }
 
     &-popup-middle {
@@ -445,9 +511,19 @@ export default {
       right: 100px;
     }
 
+    &-icon-middle {
+      top: 230px;
+      right: 260px;
+    }
+
     &-popup-south {
       top: 400px;
       right: 200px;
+    }
+
+    &-icon-south {
+      top: 420px;
+      right: 320px;
     }
 
     &-popup-east {
@@ -455,9 +531,19 @@ export default {
       right: 100px;
     }
 
+    &-icon-east {
+      top: 250px;
+     right: 130px;
+    }
+
     &-popup-island {
       top: 300px;
       right: 400px;
+    }
+
+    &-icon-island {
+      top: 330px;
+      right: 460px;
     }
 
     &-popup-text {
@@ -492,6 +578,171 @@ export default {
 
 }
 
+@media( max-width: 1023px ){
+
+.index {
+  
+
+  &-outer {
+    
+  }
+
+  &-intro {
+    
+
+    &-title {
+      
+    }
+
+    &-text {
+      
+
+      &:nth-child(1) {
+        
+
+        & div:first-child {
+          
+        }
+      }
+
+      &:nth-child(2) {
+        
+
+        & div:first-child {
+          
+        }
+      }
+    }
+  }
+
+  &-map-tag {
+    
+  }
+
+  &-map {
+    
+
+    path{
+      
+    }
+  
+    &-north{
+      
+    }
+
+    &-north-hover {
+      
+    }
+
+    &-east{
+      
+    }
+
+    &-east-hover {
+      
+    }
+
+    &-center{
+      
+    }
+
+    &-center-hover {
+      
+    }
+
+    &-south{
+      
+    }
+
+    &-south-hover {
+      
+    }
+
+    &-island{
+      
+    }
+
+    &-island-hover {
+      
+    }
+
+    &-popup {
+      
+    }
+    
+    &-icon {
+      
+    }
+
+    &-icon-hover {
+      
+    }
+
+    &-popup-north {
+      
+    }
+
+    &-icon-north {
+      
+    }
+
+    &-popup-middle {
+      
+    }
+
+    &-icon-middle {
+      
+    }
+
+    &-popup-south {
+      
+    }
+
+    &-icon-south {
+      
+    }
+
+    &-popup-east {
+      
+    }
+
+    &-icon-east {
+      
+    }
+
+    &-popup-island {
+      
+    }
+
+    &-icon-island {
+      
+    }
+
+    &-popup-text {
+      
+    }
+  }
+
+  &-tag {
+    
+
+    &-box {
+      
+    }
+
+    &-link {
+
+    }
+
+    &-text {
+      
+    }
+  }
+
+}
+
+
+}
 
 </style>
 

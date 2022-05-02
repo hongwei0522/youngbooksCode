@@ -97,7 +97,7 @@ export default {
             // centeredSlides: false,
             spaceBetween: 75,
           },
-          768: {
+          1022: {
             slidesPerView: "auto",
             spaceBetween: 75,
           },
@@ -328,7 +328,7 @@ export default {
 
 }
 
-@media( max-width: 768px ){
+@media( max-width: 1023px ){
 
   .school {
   background-image: url('../assets/img/school/bg-m.jpg');
