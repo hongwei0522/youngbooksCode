@@ -303,6 +303,12 @@ export default {
           { name: '長樂國小', path: '/school' },
           { name: '長樂國小', path: '/school' },
           { name: '長樂國小', path: '/school' },
+          { name: '長樂國小', path: '/school' },
+          { name: '長樂國小', path: '/school' },
+          { name: '長樂國小', path: '/school' },
+          { name: '長樂國小', path: '/school' },
+          { name: '長樂國小', path: '/school' },
+          { name: '長樂國小', path: '/school' },
         ],
         middle: [
           { name: '長樂國小', path: '/school' },
@@ -406,7 +412,6 @@ export default {
 
       &:nth-child(1) {
         display: flex;
-        font-weight: 300;
 
         & div:first-child {
           margin-right: 50px;
@@ -492,6 +497,8 @@ export default {
 
     &-popup {
       position: absolute;
+      max-height: 200px;
+      overflow: scroll;
       padding: 24px 10px 24px;
       background-color: white;
       border-radius: 30px;
@@ -559,6 +566,7 @@ export default {
 
     &-popup-text {
       color: black;
+      font-size: 20px;
       border-bottom: 1px solid;
       cursor: pointer;
 
@@ -767,15 +775,16 @@ export default {
     }
 
     &-popup-text {
-      font-size: 16px;
+
     }
   }
 
   &-tag {
     position: absolute;
     top: 217px;
+    right: calc(50% - 158px);
     width: 120px;
-    margin: 0px 0px 0px 200px;
+    margin: 0px;
     text-align: right;
 
     &-box {
@@ -814,6 +823,11 @@ export default {
 
 .el-input--suffix .el-input__inner {
   width: 100%;
+
+}
+
+.el-select-dropdown__item {
+  font-size: 20px;
 }
 
 @media( max-width: 1023px ){

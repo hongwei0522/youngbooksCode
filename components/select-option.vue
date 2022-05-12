@@ -26,6 +26,21 @@ export default {
           { name: '長樂國小', path: '/school' },
           { name: '輔大聖心高中', path: '/school-n01' },
           { name: '臺灣大學', path: '/school-n02' },
+          { name: '長樂國小1', path: '/school' },
+          { name: '輔大聖心高中1', path: '/school-n01' },
+          { name: '臺灣大學1', path: '/school-n02' },
+          { name: '長樂國小2', path: '/school' },
+          { name: '輔大聖心高中2', path: '/school-n01' },
+          { name: '臺灣大學2', path: '/school-n02' },
+          { name: '長樂國小3', path: '/school' },
+          { name: '輔大聖心高中3', path: '/school-n01' },
+          { name: '臺灣大學3', path: '/school-n02' },
+          { name: '長樂國小4', path: '/school' },
+          { name: '輔大聖心高中4', path: '/school-n01' },
+          { name: '臺灣大學4', path: '/school-n02' },
+          { name: '長樂國小5', path: '/school' },
+          { name: '輔大聖心高中5', path: '/school-n01' },
+          { name: '臺灣大學5', path: '/school-n02' },
         ]
       }
     }
