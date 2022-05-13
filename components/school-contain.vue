@@ -152,8 +152,6 @@ export default {
     padding: 0px 50px;
   }
 
-  
-
   &-swiper-box {
     position: relative;
   }
@@ -240,7 +238,7 @@ export default {
 @media( max-width: 1023px ){
 
   .school {
-  background-image: url('../assets/img/school/bg-m.jpg');
+    background-image: url('../assets/img/school/bg-m.jpg');
   
 
   &-outer {

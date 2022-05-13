@@ -12,7 +12,7 @@ export default {
       meta: [
         { charset: 'utf-8' },
         { hid: 'og:title'  , property: 'og:title'  , content: '輔大聖心高中' },
-        { hid: 'og:image' , property: 'og:image' , content: require('@/assets/img/article/n01/1.jpg') },
+        { hid: 'og:image' , property: 'og:image' , content: require('@/assets/img/article/n01/2.jpg') },
         { hid: 'description', name: 'description', content: '天主教基隆市輔大聖心高級中學' },
         { hid: 'og:description' , property: 'og:description' , content: '天主教基隆市輔大聖心高級中學' },
       ],
@@ -27,7 +27,7 @@ export default {
   },
   data () {
     return {
-      detail: { img: require('@/assets/img/article/n01/1.jpg'), positon: 'r', name: '輔大聖心高中', place: 'n', title: '操場也能閱讀閱讀無限', desc: 'HYC', content: '學校的操場<br>不只提供學生運動的場地<br>亦可以在此閱讀<br>只要有心<br>不論地點都可以徜徉書海', link: '10101' },
+      detail: { img: require('@/assets/img/article/n01/2.jpg'), positon: 'v', name: '輔大聖心高中', place: 'n', title: '閱在花中', desc: '三口', content: 'J3校園一角花圃之中，藏匿的不只是五彩斑斕的花朵，也淺藏著知識的線索，走進這色彩中，悠悠地找尋自己所嚮往的那片理想。', link: '10102' },
     }
   },
   computed: {
