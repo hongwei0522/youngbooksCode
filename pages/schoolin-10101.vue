@@ -1,6 +1,6 @@
 <template>
   <div>
-    <schoolContain :title="title" :frames="frames" />
+    ddd
   </div>
 </template>
 

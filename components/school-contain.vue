@@ -4,7 +4,8 @@
       <topBar/>
 
       <div class="school-title">
-        <div>{{ this.title }}閱讀私角落</div>
+        <div>{{ this.title }}</div>
+        <div>閱讀私角落</div>
         <div>校園攝影展</div>
       </div>
 
@@ -14,28 +15,19 @@
             v-for="(frame, index) in frames"
             :key="index"
           >
-            <div class="school-swiper-bg">
-              <div class="school-swiper-box">
-                <div class="school-swiper-img"
-                  :style="[
-                    {'backgroundImage': 'url(' + frame.img + ')'}
-                  ]"
-                ></div>
-                <div class="school-swiper-title">{{ frame.title }}</div>
-                <div class="school-swiper-desc">{{ frame.desc }}</div>
+            <nuxt-link :to="`/schoolin-${frame.link}`">
+              <div class="school-swiper-bg">
+                <div class="school-swiper-box">
+                  <div class="school-swiper-img"
+                    :style="[
+                      {'backgroundImage': 'url(' + frame.img + ')'}
+                    ]"
+                  ></div>
+                  <div class="school-swiper-title">{{ frame.title }}</div>
+                  <div class="school-swiper-desc">{{ frame.desc }}</div>
+                </div>
               </div>
-            </div>
-
-            <div class="school-swiper-social">
-              <a :href="`https://www.facebook.com/sharer/sharer.php?u=${fbUrl}&amp;src=sdkpreparse`" target="_blank">
-                <img class="school-swiper-icon" src="@/assets/img/icon/fb-share.png" alt="share fb">
-              </a>
-              <img @click="copy()" class="school-swiper-icon" src="@/assets/img/icon/copy.png" alt="copy link">
-              <a :href="`https://social-plugins.line.me/lineit/share?url=${currentUrl}`" target="_blank">
-                <img class="school-swiper-icon" src="@/assets/img/icon/line-share.png" alt="share line">
-              </a>
-            </div>
-
+            </nuxt-link>
           </swiper-slide>
         </swiper>
           <img v-if="slide.isShowPrev" @click="prevSlide()" class="school-swiper-prev" src="@/assets/img/icon/left-arrow.png" alt="prev">
@@ -71,11 +63,7 @@ export default {
   },
   data () {
     return {
-      url: {
-        first: 'hongwei0522.github.io',
-        second: 'youngbooks',
-        third: 'schoolpage'
-      },
+      
       slide: {
         total: 0,
         current: 0,
@@ -115,8 +103,7 @@ export default {
           }
         }
       },
-      currentUrl: '',
-      fbUrl: ''
+      
     }
   },
   mounted () {
@@ -129,15 +116,6 @@ export default {
     this.mySwiper.on('slideChange', () => {
       
     })
-
-
-    this.currentUrl = window.location.href
-    this.fbUrl = window.location.href
-    this.fbUrl = this.fbUrl.replace('/', '%2F')
-    this.fbUrl = this.fbUrl.replace('/', '%2F')
-    this.fbUrl = this.fbUrl.replace('/', '%2F')
-    this.fbUrl = this.fbUrl.replace('/', '%2F')
-    this.fbUrl = this.fbUrl.replace(':', '%3A')
 
   },
   computed: {
@@ -152,20 +130,7 @@ export default {
       // this.mySwiper.slideTo(this.slide.current + 1)
       this.mySwiper.slideNext()
     },
-    copy(){
-      var domUrl = document.createElement("input");
-          domUrl.value = this.currentUrl;
-          domUrl.id = "creatDom";
-          document.body.appendChild(domUrl);
-          domUrl.select(); // 选择对象
-          document.execCommand("Copy"); // 执行浏览器复制命令
-          let creatDom = document.getElementById("creatDom");
-          creatDom.parentNode.removeChild(creatDom);
-          this.$message({
-              message: '複製成功',
-              type: 'success'
-          });
-    }
+    
   },
   watch: {
 
@@ -198,6 +163,10 @@ export default {
     font-size: 48px;
 
     & div:first-child {
+      margin-right: 60px;
+    }
+
+    & div:nth-child(2) {
       margin-right: 60px;
     }
   }
@@ -241,26 +210,17 @@ export default {
     }
 
     &-title {
+      width: 283px;
       font-size: 24px;
       margin-top: 6px;
+      color: black;
     }
 
     &-desc {
+      width: 283px;
       font-size: 18px;
       margin-top: 0px;
-    }
-
-    &-social {
-      display: flex;
-      justify-content: flex-end;
-      align-items: baseline;
-      margin: 4px 32px 0px 0px;
-    }
-
-    &-icon {
-      width: 40px;
-      height: 100%;
-      margin-left: 7px;
+      color: black;
     }
 
     &-prev {
@@ -336,13 +296,19 @@ export default {
   }
 
   &-title {
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     margin: 60px 0px 0px;
     font-size: 30px;
 
     & div:first-child {
+      width: 100%;
+      text-align: center;
       margin-right: 0px;
+    }
+
+    & div:nth-child(2) {
+      margin-right: 10px;
     }
   }
 
@@ -373,21 +339,14 @@ export default {
     }
 
     &-title {
+      width: 210px;
       font-size: 16px;
     }
 
     &-desc {
-      
+      width: 210px;
     }
 
-    &-social {
-      justify-content: center;
-      margin: 4px 0px 0px 140px;
-    }
-
-    &-icon {
-      width: 30px;
-    }
 
     &-prev {
       left: calc(50% - 162px);

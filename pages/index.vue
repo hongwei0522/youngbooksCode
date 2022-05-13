@@ -255,10 +255,10 @@
         <div class="index-tag">
           <selectSption class="index-desktop" />
           <div class="index-tag-box">
-            <nuxt-link class="index-tag-link" to="/school?name=n01">
+            <nuxt-link class="index-tag-link" to="/school?name=101">
               <div class="index-tag-text">#輔大聖心高中</div>
             </nuxt-link>
-            <nuxt-link class="index-tag-link" to="/school?name=n02">
+            <nuxt-link class="index-tag-link" to="/school?name=102">
               <div class="index-tag-text">#臺灣大學</div>
             </nuxt-link>
           </div>
@@ -297,30 +297,30 @@ export default {
       },
       school: {
         north: [
-          { name: '臺灣大學', path: '/school?name=n02' },
-          { name: '臺灣大學', path: '/school?name=n02' },
-          { name: '臺灣大學', path: '/school?name=n02' },
-          { name: '臺灣大學', path: '/school?name=n02' },
-          { name: '臺灣大學', path: '/school?name=n02' },
-          { name: '臺灣大學', path: '/school?name=n02' },
-          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=102' },
+          { name: '臺灣大學', path: '/school?name=102' },
+          { name: '臺灣大學', path: '/school?name=102' },
+          { name: '臺灣大學', path: '/school?name=102' },
+          { name: '臺灣大學', path: '/school?name=102' },
+          { name: '臺灣大學', path: '/school?name=102' },
+          { name: '臺灣大學', path: '/school?name=102' },
         ],
         middle: [
-          { name: '臺灣大學', path: '/school?name=n02' },
-          { name: '臺灣大學', path: '/school?name=n02' },
-          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=102' },
+          { name: '臺灣大學', path: '/school?name=102' },
+          { name: '臺灣大學', path: '/school?name=102' },
         ],
         south: [
-          { name: '臺灣大學', path: '/school?name=n02' },
-          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=102' },
+          { name: '臺灣大學', path: '/school?name=102' },
         ],
         east: [
-          { name: '臺灣大學', path: '/school?name=n02' },
-          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=102' },
+          { name: '臺灣大學', path: '/school?name=102' },
         ],
         island: [
-          { name: '臺灣大學', path: '/school?name=n02' },
-          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=102' },
+          { name: '臺灣大學', path: '/school?name=102' },
         ],
 
       }

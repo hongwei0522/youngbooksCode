@@ -5,6 +5,8 @@
 </template>
 
 <script>
+
+import { schoolList } from '@/assets/list/schoolList'
 export default {
   head() {
     return {
@@ -20,19 +22,42 @@ export default {
   },
   data () {
     return {
-      title: '長樂國小',
-      frames: [
-        { img: require('@/assets/img/article/n01/1.jpg'), title: '操場也能閱讀？閱讀無限', desc: 'HYC' },
-        { img: require('@/assets/img/article/n01/2.jpg'), title: '閱在花中', desc: '三口' },
-        { img: require('@/assets/img/article/n02/1.jpg'), title: '靜閱', desc: '洗硯' },
-      ]
+      schoolList: schoolList,
+      title: '',
+      frames: [],
+      urlName: '',
+      place: ''
     }
   },
   mounted () {
     // 取得網址列參數
+    // 1 北部 2 中部 3 南部 4 東部 5 外島
     // 取得標題
+    // 判斷高中、大學
+    // 判斷北中南
     // 取得圖片
-    // 取得往下一層的連結
+    let urlParams = new URLSearchParams(window.location.search)
+    this.urlName = parseInt(urlParams.get('name'))
+    this.urlName = this.urlName.toString()
+    if(this.urlName.substr(0, 1) == 1) {
+      this.place = 'n'
+    } else if(this.urlName.substr(0, 1) == 2) {
+      this.place = 'm'
+    } else if(this.urlName.substr(0, 1) == 3) {
+      this.place = 's'
+    } else if(this.urlName.substr(0, 1) == 4) {
+      this.place = 'e'
+    } else if(this.urlName.substr(0, 1) == 5) {
+      this.place = 'i'
+    }
+
+    for(let i = 0; i < this.schoolList.length; i++) {
+      if(this.schoolList[i].link.substr(0, 3) == this.urlName) {
+        this.title = this.schoolList[i].name
+        this.frames.push(this.schoolList[i])
+      }
+    }
+
   },
   computed: {
 
