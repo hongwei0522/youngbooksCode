@@ -255,13 +255,10 @@
         <div class="index-tag">
           <selectSption class="index-desktop" />
           <div class="index-tag-box">
-            <nuxt-link class="index-tag-link" to="/school">
-              <div class="index-tag-text">#長樂國小</div>
-            </nuxt-link>
-            <nuxt-link class="index-tag-link" to="/school-n01">
+            <nuxt-link class="index-tag-link" to="/school?name=n01">
               <div class="index-tag-text">#輔大聖心高中</div>
             </nuxt-link>
-            <nuxt-link class="index-tag-link" to="/school-n02">
+            <nuxt-link class="index-tag-link" to="/school?name=n02">
               <div class="index-tag-text">#臺灣大學</div>
             </nuxt-link>
           </div>
@@ -300,35 +297,30 @@ export default {
       },
       school: {
         north: [
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
+          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=n02' },
         ],
         middle: [
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
+          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=n02' },
         ],
         south: [
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
+          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=n02' },
         ],
         east: [
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
+          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=n02' },
         ],
         island: [
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
-          { name: '長樂國小', path: '/school' },
+          { name: '臺灣大學', path: '/school?name=n02' },
+          { name: '臺灣大學', path: '/school?name=n02' },
         ],
 
       }
