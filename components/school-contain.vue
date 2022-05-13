@@ -2,12 +2,13 @@
   <div class="school">
     <div class="school-outer">
       <topBar/>
+      <titleBar :title="this.title" />
 
-      <div class="school-title">
+      <!-- <div class="school-title">
         <div>{{ this.title }}</div>
         <div>閱讀私角落</div>
         <div>校園攝影展</div>
-      </div>
+      </div> -->
 
       <div class="school-swiper-box">
         <swiper class="swiper school-swiper" :options="swiperOption" ref="mySwiper">
@@ -34,14 +35,7 @@
           <img v-if="slide.isShowNext" @click="nextSlide()" class="school-swiper-next" src="@/assets/img/icon/right-arrow.png" alt="next">
       </div>
 
-      <div class="school-back">
-        <nuxt-link to="/">
-          <div class="school-back-btn">
-            <div>看其他學校</div>
-            <img class="school-back-icon" src="@/assets/img/icon/go-arrow.png" alt="arrow back">
-          </div>
-        </nuxt-link>
-      </div>
+      <bottomBack />
 
     </div>
   </div>
@@ -51,6 +45,8 @@
 export default {
   components: {
     topBar: require('~/components/top-bar.vue').default,
+    titleBar: require('~/components/title-bar.vue').default,
+    bottomBack: require('~/components/bottom-back.vue').default,
     selectSption: require('~/components/select-option.vue').default,
   },
   props: {
@@ -156,20 +152,7 @@ export default {
     padding: 0px 50px;
   }
 
-  &-title {
-    display: flex;
-    justify-content: center;
-    margin: 40px 0px 100px;
-    font-size: 48px;
-
-    & div:first-child {
-      margin-right: 60px;
-    }
-
-    & div:nth-child(2) {
-      margin-right: 60px;
-    }
-  }
+  
 
   &-swiper-box {
     position: relative;
@@ -252,36 +235,6 @@ export default {
     }
   }
 
-  &-back {
-    display: flex;
-    justify-content: flex-end;
-    margin: 86px 0px 50px 0px;
-
-    &-btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 346px;
-      padding: 4px 0px;
-      text-align: center;
-      font-size: 36px;
-      color: black;
-      background: #D8D76F;
-      border-radius: 50px;
-      cursor: pointer;
-
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-
-    &-icon {
-      width: 14px;
-      height: 100%;
-      margin: 4px 0px 0px 10px;
-    }
-  }
-
 }
 
 @media( max-width: 1023px ){
@@ -361,18 +314,7 @@ export default {
     }
   }
 
-  &-back {
-    justify-content: center;
-
-    &-btn {
-      width: 260px;
-      font-size: 24px;
-    }
-
-    &-icon {
-      width: 10px;
-    }
-  }
+  
 
 }
 

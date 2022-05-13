@@ -1,6 +1,6 @@
 <template>
   <div>
-    ddd
+    <schoolinContain />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   },
   layout: 'default',
   components: {
-    schoolContain: require('~/components/school-contain.vue').default,
+    schoolinContain: require('~/components/schoolin-contain.vue').default,
   },
   props: {
     

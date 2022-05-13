@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="schoolin">
 
 
 
@@ -23,7 +23,9 @@ export default {
   },
   layout: 'default',
   components: {
-
+    topBar: require('~/components/top-bar.vue').default,
+    titleBar: require('~/components/title-bar.vue').default,
+    bottomBack: require('~/components/bottom-back.vue').default,
   },
   props: {
     
