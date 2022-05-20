@@ -5,37 +5,71 @@
       <nuxt/>
     </div>
     
+    <schoolAnimate v-show="isShowH" :title="title" />
+    <schoolAnimate2 v-show="isShowU" :title="title" />
     <!-- <bottomBar/> -->
+    
   </div>
 </template>
 
 <script>
 
+import { schoolList } from '@/assets/list/schoolList'
 export default {
   components: {
-    bottomBar: require('~/components/bottom-bar.vue').default
+    schoolAnimate: require('~/components/school-animate.vue').default,
+    schoolAnimate2: require('~/components/school-animate2.vue').default
+    // bottomBar: require('~/components/bottom-bar.vue').default
   },
   props: {
 
   },
   data () {
     return {
-      
+      schoolList: schoolList,
+      title: '',
+      urlName: '',
+      isShowH: false,
+      isShowU: false
     }
   },
   mounted () {
-    
+    let urlParams = new URLSearchParams(window.location.search)
+    this.urlName = parseInt(urlParams.get('name'))
   },
   computed: {
 
   },
   methods: {
-
+    showAnimate(type) {
+      if(type == 'h') {
+        this.isShowH = true
+        setTimeout(() => {
+          this.isShowH = false
+        }, 3000)
+      } else {
+        this.isShowU = true
+        setTimeout(() => {
+          this.isShowU = false
+        }, 3000)
+      }
+    }
   },
   watch: {
     '$route.name': {
       handler: function(name) {
-        
+        if(name == 'school') {
+          let urlParams = new URLSearchParams(window.location.search)
+          this.urlName = parseInt(urlParams.get('name'))
+          for(let i = 0; i < this.schoolList.length; i++) {
+            if(this.schoolList[i].link == this.urlName + '01') {
+              // 改 title
+              this.title = this.schoolList[i].name
+              // 判斷大學
+              this.showAnimate(this.schoolList[i].type)
+            }
+          }
+        }
       },
       immediate: true
     }
