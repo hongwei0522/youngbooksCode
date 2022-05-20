@@ -5,7 +5,7 @@
       <nuxt/>
     </div>
     
-    <schoolAnimate v-show="isShowH" :title="title" />
+    <schoolAnimate :title="title" />
     <schoolAnimate2 v-show="isShowU" :title="title" />
     <!-- <bottomBar/> -->
     
@@ -34,8 +34,7 @@ export default {
     }
   },
   mounted () {
-    let urlParams = new URLSearchParams(window.location.search)
-    this.urlName = parseInt(urlParams.get('name'))
+    
   },
   computed: {
 
@@ -58,6 +57,7 @@ export default {
   watch: {
     '$route.name': {
       handler: function(name) {
+        return
         if(name == 'school') {
           let urlParams = new URLSearchParams(window.location.search)
           this.urlName = parseInt(urlParams.get('name'))
@@ -71,7 +71,7 @@ export default {
           }
         }
       },
-      immediate: true
+      // immediate: true
     }
   }
 }

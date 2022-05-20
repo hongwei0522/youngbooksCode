@@ -53,6 +53,7 @@ export default {
       this.place = 'i'
     }
 
+    // 在 component 內塞入標題與圖片
     for(let i = 0; i < this.schoolList.length; i++) {
       if(this.schoolList[i].link.substr(0, 3) == this.urlName) {
         this.title = this.schoolList[i].name

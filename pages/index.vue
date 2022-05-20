@@ -272,6 +272,8 @@
 </template>
 
 <script>
+
+import { schoolList } from '@/assets/list/schoolList'
 export default {
   layout: 'default',
   components: {
@@ -283,6 +285,7 @@ export default {
   },
   data () {
     return {
+      schoolList: schoolList,
       northHover: false,
       centerHover: false,
       southHover: false,
@@ -325,6 +328,10 @@ export default {
 
       }
     }
+  },
+  mounted () {
+    // 分發北中南外的值
+    // schoolList
   },
   computed: {
 
