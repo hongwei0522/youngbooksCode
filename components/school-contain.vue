@@ -4,8 +4,8 @@
       <topBar/>
       <titleBar :title="this.title" />
 
-      <!-- 一個 swiper -->
-      <div class="school-swiper-outer-box">
+      <!-- 手機版 & 三個(以上)的版本，有 loop -->
+      <div v-if="frames >= 3 || currentWidth < 1024" class="school-swiper-outer-box">
         <swiper class="swiper school-swiper" :options="swiperOption" ref="mySwiper">
           <swiper-slide class="school-swiper-slide"
             v-for="(frame, index) in frames"
@@ -28,6 +28,30 @@
         </swiper>
           <img v-if="slide.isShowPrev" @click="prevSlide()" class="school-swiper-prev" src="@/assets/img/icon/left-arrow.png" alt="prev">
           <img v-if="slide.isShowNext" @click="nextSlide()" class="school-swiper-next" src="@/assets/img/icon/right-arrow.png" alt="next">
+      </div>
+
+      <!-- 桌面版一個、兩個，沒有 loop -->
+      <div v-else class="school-swiper-outer-box">
+        <swiper class="swiper school-swiper" :options="swiperOption2" ref="mySwiper">
+          <swiper-slide class="school-swiper-slide"
+            v-for="(frame, index) in frames"
+            :key="index"
+          >
+            <nuxt-link :to="`/schoolin-${frame.link}`">
+              <div class="school-swiper-bg">
+                <div class="school-swiper-box">
+                  <div class="school-swiper-img"
+                    :style="[
+                      {'backgroundImage': 'url(' + frame.img + ')'}
+                    ]"
+                  ></div>
+                  <div class="school-swiper-title">{{ frame.title }}</div>
+                  <div class="school-swiper-desc">{{ frame.desc }}</div>
+                </div>
+              </div>
+            </nuxt-link>
+          </swiper-slide>
+        </swiper>
       </div>
 
       <bottomBack />
@@ -60,12 +84,16 @@ export default {
         isShowPrev: true,
         isShowNext: true
       },
+      currentWidth: null,
+      //  手機版 & 三個(以上)的版本，有 loop
       swiperOption: {
-        scrollbar: true,
+        // scrollbar: true,
         // mousewheel: true,
         slidesPerView: "auto",
         spaceBetween: 75,
-        // loop: true,
+        loop: true,
+        observer:true,
+			  observeParents:true,
         breakpoints: {
           1023: {
             slidesPerView: "auto",
@@ -81,7 +109,6 @@ export default {
             spaceBetween: 0,
           },
         },
-        observer: true,
         on: {
           resize: () => {
             setTimeout(()=> {
@@ -90,16 +117,26 @@ export default {
           },
         }
       },
-      
+      //  桌面版一個、兩個，沒有 loop
+      swiperOption2: {
+        // scrollbar: true,
+        // mousewheel: true,
+        slidesPerView: "auto",
+        spaceBetween: 75,
+        observer:true,
+			  observeParents:true,
+        on: {
+          resize: () => {
+            setTimeout(()=> {
+              this.$router.push('/blank')
+            }, 500)
+          },
+        }
+      },
     }
   },
   mounted () {
-    // this.slide.total = this.frames.length
-    // if(this.frames.length == 1) {
-    //   this.slide.isShowPrev = false
-    //   this.slide.isShowNext = false
-    // }
-
+    this.currentWidth = screen.width
     this.mySwiper.on('slideChange', () => {
       
     })
@@ -114,8 +151,15 @@ export default {
       this.mySwiper.slidePrev()
     },
     nextSlide() {
+      // 桌面版 & 三個(以上)的做法
+      if(this.mySwiper.realIndex == this.frames.length - 1 && this.currentWidth > 1023) {
+        this.mySwiper.slideTo(0)
+      } else {
+        this.mySwiper.slideNext()
+      }
+
       // this.mySwiper.slideTo(this.slide.current + 1)
-      this.mySwiper.slideNext()
+      
     },
     
   },

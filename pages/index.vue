@@ -319,7 +319,7 @@ export default {
         ],
       },
       tagData: [
-        { name: '青春', link: '/school?name=102' },
+        { name: '青春', link: '/school?name=101' },
         { name: '預言', link: '/school?name=102' },
         { name: '秋色', link: '/school?name=102' },
         { name: '純粹', link: '/school?name=102' },

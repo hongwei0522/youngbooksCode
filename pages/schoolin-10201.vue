@@ -11,10 +11,10 @@ export default {
       title: '臺灣大學',
       meta: [
         { charset: 'utf-8' },
-        { hid: 'og:title'  , property: 'og:title'  , content: '臺灣大學' },
+        { hid: 'og:title'  , property: 'og:title'  , content: '青春博客來閱讀私角落' },
         { hid: 'og:image' , property: 'og:image' , content: require('@/assets/img/article/n02/1.jpg') },
-        { hid: 'description', name: 'description', content: '臺灣大學臺灣大學臺灣大學' },
-        { hid: 'og:description' , property: 'og:description' , content: '臺灣大學臺灣大學臺灣大學' },
+        { hid: 'description', name: 'description', content: '臺灣大學「靜閱」' },
+        { hid: 'og:description' , property: 'og:description' , content: '臺灣大學「靜閱」' },
       ],
     }
   },

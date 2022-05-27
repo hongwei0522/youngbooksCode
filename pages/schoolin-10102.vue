@@ -11,10 +11,10 @@ export default {
       title: '輔大聖心高中',
       meta: [
         { charset: 'utf-8' },
-        { hid: 'og:title'  , property: 'og:title'  , content: '輔大聖心高中' },
+        { hid: 'og:title'  , property: 'og:title'  , content: '青春博客來閱讀私角落' },
         { hid: 'og:image' , property: 'og:image' , content: require('@/assets/img/article/n01/2.jpg') },
-        { hid: 'description', name: 'description', content: '天主教基隆市輔大聖心高級中學' },
-        { hid: 'og:description' , property: 'og:description' , content: '天主教基隆市輔大聖心高級中學' },
+        { hid: 'description', name: 'description', content: '輔大聖心高中「閱在花中！」' },
+        { hid: 'og:description' , property: 'og:description' , content: '輔大聖心高中「閱在花中」' },
       ],
     }
   },
