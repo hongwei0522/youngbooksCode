@@ -38,7 +38,7 @@ export default {
 .bottom-back {
   display: flex;
   justify-content: flex-end;
-  margin: 86px 0px 50px 0px;
+  margin: 30px 0px 10px 0px;
 
   &-btn {
     display: flex;

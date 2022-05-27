@@ -1,8 +1,8 @@
 <template>
   <div class="top-title">
     <div>{{ this.title }}</div>
-    <div>閱讀私角落</div>
-    <div>校園攝影展</div>
+    <!-- <div>閱讀私角落</div>
+    <div>校園攝影展</div> -->
   </div>
 </template>
 
@@ -37,16 +37,16 @@ export default {
 .top-title {
     display: flex;
     justify-content: center;
-    margin: 40px 0px 100px;
+    margin: 20px 0px 0px;
     font-size: 48px;
 
-    & div:first-child {
-      margin-right: 60px;
-    }
+    // & div:first-child {
+    //   margin-right: 60px;
+    // }
 
-    & div:nth-child(2) {
-      margin-right: 60px;
-    }
+    // & div:nth-child(2) {
+    //   margin-right: 60px;
+    // }
   }
 
 @media( max-width: 1023px ){
@@ -57,15 +57,15 @@ export default {
     margin: 60px 0px 0px;
     font-size: 30px;
 
-    & div:first-child {
-      width: 100%;
-      text-align: center;
-      margin-right: 0px;
-    }
+    // & div:first-child {
+    //   width: 100%;
+    //   text-align: center;
+    //   margin-right: 0px;
+    // }
 
-    & div:nth-child(2) {
-      margin-right: 10px;
-    }
+    // & div:nth-child(2) {
+    //   margin-right: 10px;
+    // }
   }
 
 }

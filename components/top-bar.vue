@@ -40,7 +40,7 @@ export default {
 <style lang="scss">
 
 .header {
-  margin-top: 28px;
+  margin-top: 10px;
 
   &-link {
     

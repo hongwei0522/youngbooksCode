@@ -4,13 +4,8 @@
       <topBar/>
       <titleBar :title="this.title" />
 
-      <!-- <div class="school-title">
-        <div>{{ this.title }}</div>
-        <div>閱讀私角落</div>
-        <div>校園攝影展</div>
-      </div> -->
-
-      <div class="school-swiper-box">
+      <!-- 一個 swiper -->
+      <div class="school-swiper-outer-box">
         <swiper class="swiper school-swiper" :options="swiperOption" ref="mySwiper">
           <swiper-slide class="school-swiper-slide"
             v-for="(frame, index) in frames"
@@ -59,7 +54,6 @@ export default {
   },
   data () {
     return {
-      
       slide: {
         total: 0,
         current: 0,
@@ -71,10 +65,7 @@ export default {
         // mousewheel: true,
         slidesPerView: "auto",
         spaceBetween: 75,
-        autoplay: {
-          disableOnInteraction: false,
-          delay: 4000
-        },
+        // loop: true,
         breakpoints: {
           1023: {
             slidesPerView: "auto",
@@ -158,6 +149,11 @@ export default {
 
   &-swiper {
     width: 100%;
+
+    &-outer-box {
+      position: relative;
+      padding-top: 10px;
+    }
 
     &-slide {
       width: 404px;
@@ -269,6 +265,9 @@ export default {
 
   &-swiper {
 
+    &-outer-box {
+      padding-top: 25px;
+    }
 
     &-slide {
       
@@ -291,11 +290,12 @@ export default {
 
     &-title {
       width: 210px;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     &-desc {
       width: 210px;
+      font-size: 16px;
     }
 
 

@@ -496,11 +496,12 @@ export default {
 
     &-popup {
       position: absolute;
-      max-height: 200px;
+      width: 180px;
+      max-height: 170px;
       overflow: scroll;
-      padding: 24px 10px 24px;
+      padding: 2px 10px;
       background-color: white;
-      border-radius: 30px;
+      border-radius: 2px;
     }
     
     &-icon {
@@ -566,7 +567,8 @@ export default {
     &-popup-text {
       color: black;
       font-size: 20px;
-      border-bottom: 1px solid;
+      padding: 2px 0px;
+      // border-bottom: 1px solid;
       cursor: pointer;
 
       &:hover {
