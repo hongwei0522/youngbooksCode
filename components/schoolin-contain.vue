@@ -53,10 +53,6 @@
 
 <script>
 export default {
-  head() {
-    return {
-    }
-  },
   layout: 'default',
   components: {
     topBar: require('~/components/top-bar.vue').default,
