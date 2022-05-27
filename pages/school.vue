@@ -10,7 +10,14 @@ import { schoolList } from '@/assets/list/schoolList'
 export default {
   head() {
     return {
-
+      title: '閱讀私角落　校園攝影展',
+      meta: [
+        { charset: 'utf-8' },
+        { hid: 'og:title'  , property: 'og:title'  , content: '閱讀私角落　校園攝影展' },
+        { hid: 'og:image' , property: 'og:image' , content: require('@/assets/img/article/n01/1.jpg') },
+        { hid: 'description', name: 'description', content: '有一個角落，可以自由呼吸 有一個角落，可以滋養閱讀。' },
+        { hid: 'og:description' , property: 'og:description' , content: '有一個角落，可以自由呼吸 有一個角落，可以滋養閱讀。' },
+      ],
     }
   },
   layout: 'default',
