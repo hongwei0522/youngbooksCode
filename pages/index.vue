@@ -247,11 +247,10 @@
         <div class="index-tag">
           <selectSption class="index-desktop" />
           <div class="index-tag-box">
-            <nuxt-link class="index-tag-link" to="/school?name=101">
-              <div class="index-tag-text">#輔大聖心高中</div>
-            </nuxt-link>
-            <nuxt-link class="index-tag-link" to="/school?name=102">
-              <div class="index-tag-text">#臺灣大學</div>
+            <nuxt-link v-for="(tag, index) in tagData"
+            :key="index"
+             class="index-tag-link" :to="tag.link">
+              <div class="index-tag-text">#{{ tag.name }}</div>
             </nuxt-link>
           </div>
         </div>
@@ -318,8 +317,19 @@ export default {
           { name: '臺灣大學', path: '/school?name=102' },
           { name: '臺灣大學', path: '/school?name=102' },
         ],
-
-      }
+      },
+      tagData: [
+        { name: '青春', link: '/school?name=102' },
+        { name: '預言', link: '/school?name=102' },
+        { name: '秋色', link: '/school?name=102' },
+        { name: '純粹', link: '/school?name=102' },
+        { name: '獨享空間', link: '/school?name=102' },
+        { name: '反差', link: '/school?name=102' },
+        { name: '文青', link: '/school?name=102' },
+        { name: '校園一隅', link: '/school?name=102' },
+        { name: '春日閱讀', link: '/school?name=102' },
+        { name: '小美好', link: '/school?name=102' }
+      ]
     }
   },
   mounted () {
@@ -587,10 +597,56 @@ export default {
     margin-top: 160px;
 
     &-box {
+      display: flex;
+      flex-wrap: wrap;
       margin-top: 30px;
     }
 
     &-link {
+      
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:nth-child(1) {
+        padding: 0px 0px 0px 0px;
+      }
+
+      &:nth-child(2) {
+        padding: 40px 10px 0px 0px;
+      }
+
+      &:nth-child(3) {
+        padding: 115px 10px 0px 0px;
+      }
+
+      &:nth-child(4) {
+        padding: 25px 0px 0px 20px;
+      }
+
+      &:nth-child(5) {
+        padding: 75px 22px 0px 0px;
+      }
+
+      &:nth-child(6) {
+        padding: 5px 0px 0px 20px;
+      }
+
+      &:nth-child(7) {
+        padding: 35px 70px 0px 0px;
+      }
+
+      &:nth-child(8) {
+        padding: 56px 10px 0px 0px;
+      }
+
+      &:nth-child(9) {
+        padding: 5px 130px 0px 0px;
+      }
+
+      &:nth-child(10) {
+        padding: 45px 10px 0px 0px;
+      }
 
     }
 
@@ -790,10 +846,50 @@ export default {
 
     &-link {
 
+      &:nth-child(1) {
+        padding: 0px 0px 0px 0px;
+      }
+
+      &:nth-child(2) {
+        padding: 40px 10px 0px 0px;
+      }
+
+      &:nth-child(3) {
+        padding: 5px 9px 0px 0px;
+      }
+
+      &:nth-child(4) {
+        padding: 5px 0px 0px 2px;
+      }
+
+      &:nth-child(5) {
+        padding: 7px 2px 0px 0px;
+      }
+
+      &:nth-child(6) {
+        padding: 15px 0px 0px 2px;
+      }
+
+      &:nth-child(7) {
+        padding: 5px 0px 0px 20px;
+      }
+
+      &:nth-child(8) {
+        padding: 2px 20px 0px 0px;
+      }
+
+      &:nth-child(9) {
+        padding: 25px 13px 0px 0px;
+      }
+
+      &:nth-child(10) {
+        padding: 5px 22px 0px 0px;
+      }
+
     }
 
     &-text {
-      font-size: 16px;
+
     }
   }
 

@@ -87,18 +87,18 @@ export default {
             setTimeout(()=> {
               this.$router.push('/blank')
             }, 500)
-          }
+          },
         }
       },
       
     }
   },
   mounted () {
-    this.slide.total = this.frames.length
-    if(this.frames.length == 1) {
-      this.slide.isShowPrev = false
-      this.slide.isShowNext = false
-    }
+    // this.slide.total = this.frames.length
+    // if(this.frames.length == 1) {
+    //   this.slide.isShowPrev = false
+    //   this.slide.isShowNext = false
+    // }
 
     this.mySwiper.on('slideChange', () => {
       
