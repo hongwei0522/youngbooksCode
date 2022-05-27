@@ -6,17 +6,9 @@
 
       <div class="index-intro">
         <div class="index-intro-title">閱讀私角落　校園攝影展</div>
-        <div>
-          <div class="index-intro-text">
-            <div>有一個角落，可以自由呼吸</div>
-            <div>有一個角落，可以滋養閱讀</div>
-          </div>
-          <div class="index-intro-text">
-            <div>有一個角落，可以支持我</div>
-            <div>讓陽光灑落，可以孤單不會孤獨</div>
-          </div>
-          <div class="index-intro-text">可以一個人，可以一群人</div>
-          <div class="index-intro-text">我最喜歡的校園空間、支持你的閱讀私角落</div>
+        <div class="index-scroll">
+          <div class="index-scroll-text">{{ mag }}</div>
+          <div class="index-scroll-text">{{ mag }}</div>
         </div>
       </div>
       <div class="index-rwd-select">
@@ -286,6 +278,7 @@ export default {
   data () {
     return {
       schoolList: schoolList,
+      mag: '　　　有一個角落，可以自由呼吸　　　有一個角落，可以滋養閱讀　　　有一個角落，可以支持我　　　讓陽光灑落，可以孤單不會孤獨　　　可以一個人，可以一群人　　　我最喜歡的校園空間、支持你的閱讀私角落　　　',
       northHover: false,
       centerHover: false,
       southHover: false,
@@ -396,6 +389,37 @@ export default {
     padding: 0px 20px;
   }
 
+  // https://codepen.io/rachel-liaw/pen/wvdbrKB?editors=1100
+
+  &-scroll {
+    width: 700px;
+    height: 40px;
+    display: flex;
+    overflow: hidden;
+
+    &-text {
+      white-space: nowrap;
+      text-transform: uppercase;
+      animation: scroll 60s linear infinite;
+
+      &:nth-child(2) {
+        animation: scroll2 60s linear infinite;
+        animation-delay: -30s;
+      }
+    
+    }
+  }
+
+  @keyframes scroll{
+    from{transform: translateX(100%)}
+    to{transform: translateX(-100%)}
+  }
+
+  @keyframes scroll2{
+    from{transform: translateX(0%)}
+    to{transform: translateX(-200%)}
+  }
+
   &-intro {
     display: flex;
     flex-direction: column;
@@ -406,25 +430,6 @@ export default {
       font-size: 48px;
     }
 
-    &-text {
-      font-weight: 100;
-
-      &:nth-child(1) {
-        display: flex;
-
-        & div:first-child {
-          margin-right: 50px;
-        }
-      }
-
-      &:nth-child(2) {
-        display: flex;
-
-        & div:first-child {
-          margin-right: 50px;
-        }
-      }
-    }
   }
 
   &-map-tag {
@@ -617,34 +622,25 @@ export default {
     padding: 0px 5px;
   }
 
+  &-scroll {
+    width: 100vw;
+
+    &-text {
+
+      &:nth-child(2) {
+
+      }
+    
+    }
+  }
+
   &-intro {
     
-
     &-title {
       margin: 20px 0px 20px;
       font-size: 30px;
     }
 
-    &-text {
-      font-size: 18px;
-      text-align: center;
-
-      &:nth-child(1) {
-        flex-direction: column;
-
-        & div:first-child {
-          margin: 0px;
-        }
-      }
-
-      &:nth-child(2) {
-        flex-direction: column;
-
-        & div:first-child {
-          margin: 0px;
-        }
-      }
-    }
   }
 
   &-rwd-select {
