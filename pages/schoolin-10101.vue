@@ -28,7 +28,7 @@ export default {
   data () {
     return {
       // 設定自動抓取
-      detail: { img: require('@/assets/img/article/n01/1.jpg'), positon: 'r', name: '輔大聖心高中', place: 'n', title: '閱讀無限制！', desc: 'HYC', content: '學校的操場<br>不只提供學生運動的場地<br>亦可以在此閱讀<br>只要有心<br>不論地點都可以徜徉書海', link: '10101' },
+      detail: { img: require('@/assets/img/article/n01/1.jpg'), position: 'r', name: '輔大聖心高中', place: 'n', title: '閱讀無限制！', desc: 'HYC', content: '學校的操場<br>不只提供學生運動的場地<br>亦可以在此閱讀<br>只要有心<br>不論地點都可以徜徉書海', link: '10101' },
     }
   },
   computed: {

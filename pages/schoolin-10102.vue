@@ -27,7 +27,7 @@ export default {
   },
   data () {
     return {
-      detail: { img: require('@/assets/img/article/n01/2.jpg'), positon: 'v', name: '輔大聖心高中', place: 'n', title: '閱在花中', desc: '三口', content: 'J3校園一角花圃之中，藏匿的不只是五彩斑斕的花朵，也淺藏著知識的線索，走進這色彩中，悠悠地找尋自己所嚮往的那片理想。', link: '10102' },
+      detail: { img: require('@/assets/img/article/n01/2.jpg'), position: 'v', name: '輔大聖心高中', place: 'n', title: '閱在花中', desc: '三口', content: 'J3校園一角花圃之中，藏匿的不只是五彩斑斕的花朵，也淺藏著知識的線索，走進這色彩中，悠悠地找尋自己所嚮往的那片理想。', link: '10102' },
     }
   },
   computed: {
