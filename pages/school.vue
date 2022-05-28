@@ -1,6 +1,9 @@
 <template>
   <div>
     <schoolContain :title="title" :frames="frames" />
+
+    <schoolAnimate v-show="isShowH" :title="title" />
+    <schoolAnimate2 v-show="isShowU" :title="title" />
   </div>
 </template>
 
@@ -8,20 +11,10 @@
 
 import { schoolList } from '@/assets/list/schoolList'
 export default {
-  head() {
-    return {
-      title: '閱讀私角落　校園攝影展',
-      meta: [
-        { charset: 'utf-8' },
-        { hid: 'og:title'  , property: 'og:title'  , content: '閱讀私角落　校園攝影展' },
-        { hid: 'og:image' , property: 'og:image' , content: require('@/assets/img/article/n01/1.jpg') },
-        { hid: 'description', name: 'description', content: '有一個角落，可以自由呼吸 有一個角落，可以滋養閱讀。' },
-        { hid: 'og:description' , property: 'og:description' , content: '有一個角落，可以自由呼吸 有一個角落，可以滋養閱讀。' },
-      ],
-    }
-  },
   layout: 'default',
   components: {
+    schoolAnimate: require('~/components/school-animate.vue').default,
+    schoolAnimate2: require('~/components/school-animate2.vue').default,
     schoolContain: require('~/components/school-contain.vue').default,
   },
   props: {
@@ -33,7 +26,9 @@ export default {
       title: '',
       frames: [],
       urlName: '',
-      place: ''
+      place: '',
+      isShowH: false,
+      isShowU: false
     }
   },
   mounted () {
@@ -68,15 +63,54 @@ export default {
       }
     }
 
+    // 動畫
+    let tempUrlName = parseInt(urlParams.get('name'))
+    for(let i = 0; i < this.schoolList.length; i++) {
+      if(this.schoolList[i].link == tempUrlName + '01') {
+        // 改 title
+        this.title = this.schoolList[i].name
+        // 判斷大學
+        this.showAnimate(this.schoolList[i].type)
+      }
+    }
+
   },
   computed: {
 
   },
   methods: {
-    
+    showAnimate(type) {
+      if(type == 'h') {
+        this.isShowH = true
+        setTimeout(() => {
+          this.isShowH = false
+        }, 3000)
+      } else {
+        this.isShowU = true
+        setTimeout(() => {
+          this.isShowU = false
+        }, 3000)
+      }
+    }
   },
   watch: {
-    
+    '$route.name': {
+      handler: function(name) {
+        if(name == 'school') {
+          // let urlParams = new URLSearchParams(window.location.search)
+          // this.urlName = parseInt(urlParams.get('name'))
+          // for(let i = 0; i < this.schoolList.length; i++) {
+          //   if(this.schoolList[i].link == this.urlName + '01') {
+          //     // 改 title
+          //     this.title = this.schoolList[i].name
+          //     // 判斷大學
+          //     this.showAnimate(this.schoolList[i].type)
+          //   }
+          // }
+        }
+      },
+      // immediate: true
+    }
   }
 }
 </script>

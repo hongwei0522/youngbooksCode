@@ -53,7 +53,6 @@
 
 <script>
 export default {
-  layout: 'default',
   components: {
     topBar: require('~/components/top-bar.vue').default,
     titleBar: require('~/components/title-bar.vue').default,
@@ -155,7 +154,6 @@ export default {
   &-photo {
     width: 360px;
     height: 490px;
-    background-image: url('../assets/img/article/n01/1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
