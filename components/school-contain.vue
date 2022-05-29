@@ -4,8 +4,8 @@
       <topBar/>
       <titleBar :title="this.title" />
 
-      <!-- 手機版 & 三個(以上)的版本，有 loop -->
-      <div v-if="frames >= 3 || currentWidth < 1024" class="school-swiper-outer-box">
+      <!-- 手機版 & 三個(以上)的版本，有 loop -->  
+      <div v-if="frames.length >= 3 || currentWidth < 1024" class="school-swiper-outer-box">
         <swiper class="swiper school-swiper" :options="swiperOption" ref="mySwiper">
           <swiper-slide class="school-swiper-slide"
             v-for="(frame, index) in frames"
