@@ -517,6 +517,10 @@ export default {
       padding: 2px 10px;
       background-color: white;
       border-radius: 2px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
     
     &-icon {
@@ -706,7 +710,6 @@ export default {
   &-map-tag {
     position: relative;
     flex-direction: column;
-    align-items: center;
   }
 
   &-map {
@@ -834,24 +837,25 @@ export default {
 
   &-tag {
     position: absolute;
-    top: 217px;
+    top: 0px;
     right: calc(50% - 158px);
     width: 120px;
     margin: 0px;
     text-align: right;
 
     &-box {
+      justify-content: end;
       margin-top: 0px;
     }
 
     &-link {
 
       &:nth-child(1) {
-        padding: 0px 0px 0px 0px;
+        padding: 5px 0px 0px 0px;
       }
 
       &:nth-child(2) {
-        padding: 40px 10px 0px 0px;
+        padding: 20px 10px 0px 0px;
       }
 
       &:nth-child(3) {
@@ -875,7 +879,7 @@ export default {
       }
 
       &:nth-child(8) {
-        padding: 2px 20px 0px 0px;
+        padding: 2px 10px 0px 0px;
       }
 
       &:nth-child(9) {
@@ -889,7 +893,7 @@ export default {
     }
 
     &-text {
-
+      font-size: 20px;
     }
   }
 
