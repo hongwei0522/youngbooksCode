@@ -136,6 +136,8 @@ export default {
     }
   },
   mounted () {
+    this.mySwiper.slideTo(1)
+    this.mySwiper.slideTo(0)
     this.currentWidth = screen.width
     this.mySwiper.on('slideChange', () => {
       
