@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="index-rwd-select">
-        <selectSption class="index-rwd" />
+        <selectSption :options="options" class="index-rwd" />
       </div>
 
       <div class="index-map-tag">
@@ -245,7 +245,7 @@
         </div>
 
         <div class="index-tag">
-          <selectSption class="index-desktop" />
+          <selectSption :options="options" class="index-desktop" />
           <div class="index-tag-box">
             <nuxt-link v-for="(tag, index) in tagData"
             :key="index"
@@ -277,6 +277,7 @@ export default {
   data () {
     return {
       schoolList: schoolList,
+      options: [],
       mag: '　　　有一個角落，可以自由呼吸　　　有一個角落，可以滋養閱讀　　　有一個角落，可以支持我　　　讓陽光灑落，可以孤單不會孤獨　　　可以一個人，可以一群人　　　我最喜歡的校園空間、支持你的閱讀私角落　　　',
       northHover: false,
       centerHover: false,
@@ -291,32 +292,11 @@ export default {
         island: false
       },
       school: {
-        north: [
-          { name: '臺灣大學', path: '/school?name=102' },
-          { name: '臺灣大學', path: '/school?name=102' },
-          { name: '臺灣大學', path: '/school?name=102' },
-          { name: '臺灣大學', path: '/school?name=102' },
-          { name: '臺灣大學', path: '/school?name=102' },
-          { name: '臺灣大學', path: '/school?name=102' },
-          { name: '臺灣大學', path: '/school?name=102' },
-        ],
-        middle: [
-          { name: '臺灣大學', path: '/school?name=102' },
-          { name: '臺灣大學', path: '/school?name=102' },
-          { name: '臺灣大學', path: '/school?name=102' },
-        ],
-        south: [
-          { name: '臺灣大學', path: '/school?name=102' },
-          { name: '臺灣大學', path: '/school?name=102' },
-        ],
-        east: [
-          { name: '臺灣大學', path: '/school?name=102' },
-          { name: '臺灣大學', path: '/school?name=102' },
-        ],
-        island: [
-          { name: '臺灣大學', path: '/school?name=102' },
-          { name: '臺灣大學', path: '/school?name=102' },
-        ],
+        north: [],
+        middle: [],
+        south: [],
+        east: [],
+        island: []
       },
       tagData: [
         { name: '青春', link: '/school?name=102' },
@@ -333,8 +313,42 @@ export default {
     }
   },
   mounted () {
+    // 處理所有學校值後，傳給 select option
+    this.schoolList.forEach((scape) => {
+      if (!this.options.find(r => r.name === scape.name)) {
+        this.options.push(scape);
+      }
+    })
+    
     // 分發北中南外的值
-    // schoolList
+    for(let i = 0; i < this.options.length; i++) {
+      if(this.options[i].place == 'n') {
+        this.school.north.push({
+          name: this.options[i].name,
+          path: '/school?name=' + this.options[i].link.substr(0,3)
+        })
+      } else if(this.options[i].place == 'm') {
+        this.school.middle.push({
+          name: this.options[i].name,
+          path: '/school?name=' + this.options[i].link.substr(0,3)
+        })
+      } else if(this.options[i].place == 's') {
+        this.school.south.push({
+          name: this.options[i].name,
+          path: '/school?name=' + this.options[i].link.substr(0,3)
+        })
+      } else if(this.options[i].place == 'e') {
+        this.school.east.push({
+          name: this.options[i].name,
+          path: '/school?name=' + this.options[i].link.substr(0,3)
+        })
+      } else if(this.options[i].place == 'i') {
+        this.school.island.push({
+          name: this.options[i].name,
+          path: '/school?name=' + this.options[i].link.substr(0,3)
+        })
+      } 
+    }
   },
   computed: {
 

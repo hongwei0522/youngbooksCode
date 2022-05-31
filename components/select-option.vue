@@ -1,7 +1,7 @@
 <template>
   <el-select v-model="select.current" placeholder="選擇校園">
     <el-option
-      v-for="option in select.options"
+      v-for="option in options"
       :key="option.name"
       :label="option.name"
       :value="option.name"
@@ -16,28 +16,14 @@ export default {
 
   },
   props: {
-    
+    options: {
+      type: Array
+    },
   },
   data () {
     return {
       select: {
         current: '選擇校園',
-        options: [
-          { name: '臺灣大學', path: '/school?name=102' },
-          { name: '臺灣大學1', path: '/school?name=102' },
-          { name: '臺灣大學2', path: '/school?name=102' },
-          { name: '臺灣大學3', path: '/school?name=102' },
-          { name: '臺灣大學4', path: '/school?name=102' },
-          { name: '臺灣大學5', path: '/school?name=102' },
-          { name: '臺灣大學6', path: '/school?name=102' },
-          { name: '臺灣大學7', path: '/school?name=102' },
-          { name: '臺灣大學8', path: '/school?name=102' },
-          { name: '臺灣大學9', path: '/school?name=102' },
-          { name: '臺灣大學10', path: '/school?name=102' },
-          { name: '臺灣大學11', path: '/school?name=102' },
-          { name: '臺灣大學12', path: '/school?name=102' },
-          { name: '臺灣大學13', path: '/school?name=102' },
-        ]
       }
     }
   },
@@ -50,9 +36,9 @@ export default {
   watch: {
     'select.current': {
       handler: function(data) {
-        for(let j = 0; j < this.select.options.length; j++) {
-          if(this.select.options[j].name == data) {
-            this.$router.push(this.select.options[j].path)
+        for(let j = 0; j < this.options.length; j++) {
+          if(this.options[j].name == data) {
+            this.$router.push('/school?name=' + this.options[j].link.substr(0,3))
           }
         }
       },
