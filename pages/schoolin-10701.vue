@@ -27,7 +27,7 @@ export default {
   },
   data () {
     return {
-      detail: { img: require('@/assets/img/article/n07/1.jpg'), position: 'v', name: '中山女高', place: 'n', title: '背光', desc: '羅宜蓁', content: '教室中的白光變得有些煩膩，是時候逃離水泥的僵硬奔向千變萬化的自然和煦，踏上灑上數點綠油的中山草皮，一片片稀疏錯落的繁花簇擁，綠意盎然，舉起書本向臉上一放，仰頭，背著光，卻看見更加清晰的文字烙印；背著光，卻意外住進一頂天空的蔚藍。', link: '10701' }
+      detail: { img: require('@/assets/img/article/n07/1.jpg'), position: 'v', name: '中山女高', place: 'n', title: '背光', desc: '羅宜蓁', content: '教室中的白光變得有些煩膩，是時候逃離水泥的僵硬奔向千變萬化的自然和煦，<br>踏上灑上數點綠油的中山草皮，一片片稀疏錯落的繁花簇擁，綠意盎然，<br>舉起書本向臉上一放，仰頭，<br>背著光，卻看見更加清晰的文字烙印；<br>背著光，卻意外住進一頂天空的蔚藍。', link: '10701' }
     }
   },
   computed: {

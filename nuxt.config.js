@@ -4,7 +4,7 @@ export default {
   //  壓縮圖片 https://squoosh.app/editor
   target: 'static',
   router: {
-    base: '/youngbook/'
+    base: '/youngbooks/'
   },
   head: {
     titleTemplate: '%s',

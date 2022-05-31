@@ -27,7 +27,7 @@ export default {
   },
   data () {
     return {
-      detail: { img: require('@/assets/img/article/n07/2.jpg'), position: 'v', name: '中山女高', place: 'n', title: '青春與閱讀的相遇', desc: '小韌', content: '在學校中央的大草皮上，我們揮擲青春年華，或追逐嬉戲，或圍圈談心，或翻開扉頁盡情閱讀，都交織出女校生活裡最難忘與快樂的回憶點滴。', link: '10702' }
+      detail: { img: require('@/assets/img/article/n07/2.jpg'), position: 'v', name: '中山女高', place: 'n', title: '青春與閱讀的相遇', desc: '小韌', content: '在學校中央的大草皮上，<br>我們揮擲青春年華，<br>或追逐嬉戲，或圍圈談心，或翻開扉頁盡情閱讀，<br>都交織出女校生活裡最難忘與快樂的回憶點滴。', link: '10702' }
     }
   },
   computed: {
