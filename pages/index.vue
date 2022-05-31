@@ -515,7 +515,7 @@ export default {
       max-height: 170px;
       overflow: scroll;
       padding: 2px 10px;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 1);
       border-radius: 2px;
 
       &::-webkit-scrollbar {
@@ -770,6 +770,7 @@ export default {
 
     &-popup {
       padding: 10px;
+      background-color: rgba(255, 255, 255, 0.9);
     }
     
     &-icon {
@@ -851,15 +852,15 @@ export default {
     &-link {
 
       &:nth-child(1) {
-        padding: 5px 0px 0px 0px;
+        padding: 20px 0px 0px 0px;
       }
 
       &:nth-child(2) {
-        padding: 20px 10px 0px 0px;
+        padding: 10px 0px 0px 20px;
       }
 
       &:nth-child(3) {
-        padding: 5px 9px 0px 0px;
+        padding: 5px 14px 0px 0px;
       }
 
       &:nth-child(4) {
@@ -871,7 +872,7 @@ export default {
       }
 
       &:nth-child(6) {
-        padding: 15px 0px 0px 2px;
+        padding: 10px 0px 0px 2px;
       }
 
       &:nth-child(7) {
@@ -883,7 +884,7 @@ export default {
       }
 
       &:nth-child(9) {
-        padding: 25px 13px 0px 0px;
+        padding: 0px 13px 0px 0px;
       }
 
       &:nth-child(10) {
@@ -893,7 +894,7 @@ export default {
     }
 
     &-text {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 

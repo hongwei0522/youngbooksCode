@@ -28,8 +28,20 @@ export default {
       urlName: '',
       place: '',
       isShowH: false,
-      isShowU: false
+      isShowU: false,
+      isFromInsidePage: false
     }
+  },
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      // 判斷是否從內頁過來
+      if(from.name) {
+        if(from.name.substr(0, 8) == 'schoolin') {
+          vm.isFromInsidePage = true
+        }
+      }
+      vm.prevRoute = from
+    })
   },
   mounted () {
     // 取得網址列參數
@@ -70,7 +82,11 @@ export default {
         // 改 title
         this.title = this.schoolList[i].name
         // 判斷大學
-        this.showAnimate(this.schoolList[i].type)
+        if(!this.isFromInsidePage) {
+          this.showAnimate(this.schoolList[i].type)
+          this.isFromInsidePage = false
+        }
+        
       }
     }
 
