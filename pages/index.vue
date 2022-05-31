@@ -319,16 +319,16 @@ export default {
         ],
       },
       tagData: [
-        { name: '青春', link: '/school?name=101' },
-        { name: '預言', link: '/school?name=102' },
-        { name: '秋色', link: '/school?name=102' },
-        { name: '純粹', link: '/school?name=102' },
-        { name: '獨享空間', link: '/school?name=102' },
-        { name: '反差', link: '/school?name=102' },
-        { name: '文青', link: '/school?name=102' },
-        { name: '校園一隅', link: '/school?name=102' },
-        { name: '春日閱讀', link: '/school?name=102' },
-        { name: '小美好', link: '/school?name=102' }
+        { name: '青春', link: '/school?name=102' },
+        { name: '預言', link: '/school?name=103' },
+        { name: '秋色', link: '/school?name=106' },
+        { name: '純粹', link: '/school?name=107' },
+        { name: '獨享空間', link: '/school?name=108' },
+        { name: '反差', link: '/school?name=109' },
+        { name: '文青', link: '/school?name=205' },
+        { name: '校園一隅', link: '/school?name=301' },
+        { name: '春日閱讀', link: '/school?name=302' },
+        { name: '小美好', link: '/school?name=401' }
       ]
     }
   },
